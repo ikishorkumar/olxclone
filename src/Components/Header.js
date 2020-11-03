@@ -1,23 +1,58 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import {
+	Navbar,
+	Nav,
+	Form,
+	FormControl,
+	Button,
+	Container,
+	Row,
+	InputGroup,
+	NavbarBrand,
+	NavItem,
+} from 'react-bootstrap';
+import './Header.css';
+import logo from '../Images/olxlogo.png';
+import plusIcon from '../Images/plus-solid.svg';
 
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 export class Header extends Component {
 	render() {
 		return (
-			<>
-				<Navbar bg="dark" variant="dark">
-					<Navbar.Brand href="#home">Navbar</Navbar.Brand>
-					<Nav className="mr-auto">
-						<Nav.Link href="#home">Home</Nav.Link>
-						<Nav.Link href="#features">Features</Nav.Link>
-						<Nav.Link href="#pricing">Pricing</Nav.Link>
-					</Nav>
-					<Form inline>
-						<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-						<Button variant="outline-info">Search</Button>
-					</Form>
-				</Navbar>
-			</>
+			<div id="header">
+				<div id="headerbar">
+					<Navbar>
+						<NavbarBrand>
+							<a>
+								<img src={logo} width="48px" height="48px" />
+							</a>
+						</NavbarBrand>
+						<div>
+							<Nav className="mr-auto">
+								<NavItem href="#home">Home</NavItem>
+								<NavItem href="#features">Features</NavItem>
+							</Nav>
+						</div>
+						<Nav>
+							<NavItem>
+								<span>
+									<button>Login</button>
+								</span>
+							</NavItem>
+							<NavItem eventKey={2} href="#memes">
+								<span>
+									<span>
+										<a href="#">
+											<img src={plusIcon} width="15.6px" height="15.6px" />
+										</a>
+									</span>
+									<span>SELL</span>
+								</span>
+							</NavItem>
+						</Nav>
+					</Navbar>
+				</div>
+			</div>
 		);
 	}
 }

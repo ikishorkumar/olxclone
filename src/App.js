@@ -1,6 +1,6 @@
 import './App.css';
-import Olx from './Components/Olx';
 import { Container, Row, Col } from 'react-bootstrap';
+import Olx from './Components/Olx';
 
 function App() {
 	return (
